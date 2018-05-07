@@ -1,0 +1,84 @@
+﻿<div class="row">
+    <div class="col-sm-offset-3 col-md-6"
+         style="background-color: #fff;padding: 33px;">
+
+        <div clas="row" style="margin-bottom: 35px;">
+            <input type="button" class="btn btn-primary" value="Add Employee" ng-click="showInfo(1)">
+            <input type="button" class="btn btn-warning" value="Employee List" ng-click="showInfo(2)" style="margin-left: 15px;">
+        </div>
+
+        <div ng-if="!show_empList">
+
+            <div class="col-sm-12 text-info">
+                <span>Create Employee</span>
+            </div>
+
+            <form name="employeeForm" class="form-horizontal" ng-submit="create_employ(employeeForm)" ng-validate="validationOptions">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">User Name</label>
+                    <div class="col-sm-6" style="position: relative;float: left;">
+                        <input type="text" class="form-control" name="userName" ng-model="empInfo.Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Email Id</label>
+                    <div class="col-sm-6" style="position: relative;float: left;">
+                        <input type="text" class="form-control" name="emailId" ng-model="empInfo.EmailId">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Mobile Number</label>
+                    <div class="col-sm-6" style="position: relative;float: left;">
+                        <input type="text" class="form-control" name="mobileNo" ng-model="empInfo.MobileNumber">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Gender</label>
+                    <div class="col-sm-6">
+                        <select class="form-control"
+                                ng-model="empInfo.GenderType"
+                                name="gender"
+                                ng-options="::gender.Id as ::gender.Name for gender in genderInfo">
+                            <option value=""> ---- Select Gender ---- </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info text-center">Create</button>
+                </div>
+            </form>
+
+        </div>
+
+        <div ng-if="show_empList">
+            <div ng-if="!empList.length">
+                <h3 class="text-danger">Oops! we did not found any employee :( </h3>
+            </div>
+            <table class="table table-hover text-center"
+                   ng-if="empList.length">
+                <thead>
+                    <tr class="text-center">
+                        <th>S.No</th>
+                        <th>Employee Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile No</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="emp in empList">
+                        <td ng-bind="$index"></td>
+                        <td ng-bind="emp.Name"></td>
+                        <td ng-bind="emp.EmailId"></td>
+                        <td ng-bind="emp.MobileNumber"></td>
+                        <td ng-bind="emp.Gender"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿<div class="row">
+    <div class="col-sm-offset-3 col-md-6"
+         style="background-color: #fff;padding: 33px;">
+
+        <!--  Submit button should be inside <form> tag  -->
+        <form name="user_signupForm" class="form-horizontal" ng-submit="register_User(user_signupForm)" ng-validate="validationOptions">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">User Name</label>
+                <div class="col-sm-6" style="position: relative;float: left;">
+                    <input type="text" class="form-control" name="userName" ng-model="userInfo.userName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Email Id</label>
+                <div class="col-sm-6" style="position: relative;float: left;">
+                    <input type="text" class="form-control" name="emailId" ng-model="userInfo.emailId">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Password</label>
+                <div class="col-sm-6" style="position: relative;float: left;">
+                    <input type="password" class="form-control" name="pasword" id="password" ng-model="userInfo.password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-offset-1 col-sm-3 control-label">Confirm Password</label>
+                <div class="col-sm-6" style="position: relative;float: left;">
+                    <input type="password" class="form-control" name="confirm_pasword">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a ui-sref="project_login" class="btn btn-primary pull-left">Login</a>
+                <button type="submit" class="btn btn-info">Register</button>
+            </div>
+        </form>
+
+    </div>
+</div>

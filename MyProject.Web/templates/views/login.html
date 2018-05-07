@@ -1,0 +1,26 @@
+﻿<div class="row">
+    <div class="col-sm-offset-4 col-md-4"
+         style="background-color: #fff;padding: 33px;">
+
+        <form name="user_loginForm" ng-submit="user_SignIn(user_loginForm)" ng-validate="validationOptions">
+            <div class="col-md-offset-2 col-md-8">
+                <div id="loginForm" ng-if="!is_forgetLogin">
+                    <div style="margin-bottom: 25px;position: relative;" class="form-group">
+                        <span style="position: absolute;top: 10px;left: 15px;"><i class="fa fa-user"></i></span>
+                        <input class="form-control" name="userName" placeholder="Enter Email Id" type="text" ng-model="userInfo.userName" style="padding-left: 37px;">
+                    </div>
+                    <div style="margin-bottom: 25px;position: relative;" class="form-group">
+                        <span style="position: absolute;top: 10px;left: 15px;"><i class="fa fa-key"></i></span>
+                        <input class="form-control cls_Password" name="password" placeholder="Enter Password" type="password" ng-model="userInfo.Password" style="padding-left: 37px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div style="margin-top:10px" class="form-group">
+                    <a ui-sref="user_register" class="btn btn-primary pull-left">Register</a>
+                    <input type="submit" value="Login" class="btn btn-info pull-right">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
